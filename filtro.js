@@ -8,8 +8,14 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
+//Isis: Cambie el getElementsByName por getElementsById
+const li = document.getElementById("lista-de-productos") // Es getElement 
+const $i = document.querySelector('#filtro'); //Isis: llamar al id filtro no a input 
+
+function displayProductos(productos){
+li.innerHTML = ''; // Actualiza el contenido de la li 
+
+
 
 for (let i = 0; i < productos.length; i++) {
   var d = document.createElement("div")
@@ -27,8 +33,8 @@ for (let i = 0; i < productos.length; i++) {
 
   li.appendChild(d)
 }
-
-displayProductos(productos)
+}
+displayProductos(productos) //la función no esta declarada 
 const botonDeFiltro = document.querySelector("button");
 
 botonDeFiltro.onclick = function() {
